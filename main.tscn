@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c553kupybadbw"]
+
+[ext_resource type="PackedScene" uid="uid://b6u1uw3v8g3r8" path="res://BushHawthorn01.glb" id="1_tgdfh"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BushHawthorn01" parent="." instance=ExtResource("1_tgdfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00317508, 0, -0.0599114)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://bskr7u1d7lgyv"]
+
+[ext_resource type="Shader" path="res://addons/Imposter/imposter/materials/shaders/ImpostorShader.gdshader" id="1_o6u0g"]
+[ext_resource type="Texture2D" uid="uid://bclfoubf4o7ux" path="res://imposters/base_BushHawthorn01_albedo.png" id="2_as8vo"]
+[ext_resource type="Texture2D" uid="uid://ns6ptglrwcw" path="res://imposters/base_BushHawthorn01_depth.png" id="3_4rg7w"]
+[ext_resource type="Texture2D" uid="uid://d0v7gbw7kqfxl" path="res://imposters/base_BushHawthorn01_normal.png" id="4_nq0vr"]
+[ext_resource type="Texture2D" uid="uid://bsscgw14t2q2t" path="res://imposters/base_BushHawthorn01_orm.png" id="5_vdhbu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7ko1"]
+render_priority = 0
+shader = ExtResource("1_o6u0g")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/imposterFrames = Vector2(16, 16)
+shader_parameter/positionOffset = Vector3(-0.0801556, 1.21767, 0)
+shader_parameter/isFullSphere = false
+shader_parameter/alpha_clamp = 0.5
+shader_parameter/dither = false
+shader_parameter/scale = 3.20286
+shader_parameter/depth_scale = 0.0
+shader_parameter/normalmap_depth = 1.0
+shader_parameter/aabb_max = 1.60143
+shader_parameter/imposterTextureAlbedo = ExtResource("2_as8vo")
+shader_parameter/imposterTextureNormal = ExtResource("4_nq0vr")
+shader_parameter/imposterTextureDepth = ExtResource("3_4rg7w")
+shader_parameter/imposterTextureOrm = ExtResource("5_vdhbu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_byhmi"]
+material = SubResource("ShaderMaterial_d7ko1")
+custom_aabb = AABB(-2.2013, 0, -2.06793, 6.36343, 3.65301, 6.2038)
+
+[node name="Impostor" type="Node3D"]
+
+[node name="mesh-impostor" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_byhmi")
